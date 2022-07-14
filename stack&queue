@@ -1,0 +1,24 @@
+//stack implementation
+
+stack=[]
+stack.append(1)
+stack.append('a')
+stack.append(101)
+stack.append('abc')
+print(stack)
+stack.pop(1)
+print(stack)
+stack.pop(0)
+print(stack)
+
+//queue implementation
+queue=[]
+queue.append(1)
+queue.append('a')
+queue.append(101)
+queue.append('abc')
+print(queue)
+queue.pop(2)
+print(queue)
+queue.pop(0)
+print(queue)
