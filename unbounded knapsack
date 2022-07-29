@@ -1,0 +1,15 @@
+def UnboundedKnapsack(Capacity,n,weight,val):
+    dp=[]
+    for i in range(Capacity+1):
+        dp.append(0)
+    for i in range(0,Capacity+1):
+        for j in range(0,n):
+            if weight[j] < i:
+                dp[i] = max(dp[i] , dp[i-weight[j]]+val[j])
+    return dp[Capacity]
+
+n = 4
+weight = [5,10,8,15]
+val = [40,30,50,25]
+Capacity = 120
+print(UnboundedKnapsack(Capacity,n,weight,val))
