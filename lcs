@@ -1,0 +1,16 @@
+def lcs(pat1, pat2):
+    m = len(pat1)
+    n = len(pat2)
+    dp = [[None] * (n + 1) for item in range(m + 1)]
+    for i in range(m + 1):
+        for j in range(n + 1):
+            if i == 0 or j == 0:
+                dp[i][j] = 0
+            elif pat1[i - 1] == pat2[j - 1]:
+                dp[i][j] = dp[i - 1][j - 1] + 1
+            else :
+                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
+    return dp[m][n]
+pat1 = input()
+pat2 = input()
+print("Length of LCS: ", lcs(pat1, pat2))
